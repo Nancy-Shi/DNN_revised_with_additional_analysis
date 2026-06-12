@@ -1,0 +1,149 @@
+{
+  "wave": "delta",
+  "rows": 64,
+  "no_information": {
+    "params": {
+      "beta": 0.13064952969263882,
+      "nu": 0.005850902964754688
+    },
+    "metrics": {
+      "log_rmse": 0.0791627489402981,
+      "case_mape": 0.006558122706104547,
+      "vaccine_mape": 0.09819257508998402
+    }
+  },
+  "spline_beta": {
+    "params": {
+      "knot_times": [
+        0.0,
+        15.75,
+        31.5,
+        47.25,
+        63.0
+      ],
+      "log_beta_knots": [
+        -2.2980776880632057,
+        -1.9220631454783612,
+        -2.01962056668416,
+        -2.1966932883221015,
+        -2.491448371116495
+      ],
+      "nu": 0.005850249034042651
+    },
+    "metrics": {
+      "log_rmse": 0.07900943736627511,
+      "case_mape": 0.0008930610063642541,
+      "vaccine_mape": 0.0982259624120353
+    }
+  },
+  "semi_mechanistic": {
+    "params": {
+      "beta_intercept": -2.0514165170950687,
+      "beta_m": -1.1242172990914001,
+      "beta_c": 1.1891928445127096,
+      "nu_intercept": -4.91549492247701,
+      "nu_m": 0.17075891204911386,
+      "nu_c": -0.568787221667753
+    },
+    "metrics": {
+      "log_rmse": 0.006644893684258899,
+      "case_mape": 0.0010031137927431638,
+      "vaccine_mape": 0.007101460306989349
+    }
+  },
+  "semi_mechanistic_information_dynamics": {
+    "intervention": {
+      "a0": 1.4212629188372222e-16,
+      "decay_m": 0.002643665051775162,
+      "coupling_c_to_m": 1.2581088564637241e-14,
+      "b0": 1.0861325226703071e-10,
+      "coupling_m_to_c": 0.38773689749294454,
+      "decay_c": 0.4742153928903049,
+      "trajectory_rmse": 5.841311400448818
+    },
+    "vaccination": {
+      "a0": 6.52730692988889e-07,
+      "decay_m": 0.29337457617202906,
+      "coupling_c_to_m": 1.2353906650839364,
+      "b0": 1.318946701050338e-14,
+      "coupling_m_to_c": 5.349824965195151e-17,
+      "decay_c": 0.001633506587275954,
+      "trajectory_rmse": 10.059455171751283
+    }
+  },
+  "counterfactual_endpoint_effects": {
+    "M_zero": {
+      "case_endpoint_relative_change": 30.48373330665307,
+      "vaccine_endpoint_relative_change": -0.8305826426608628
+    },
+    "C_zero": {
+      "case_endpoint_relative_change": -0.30999335558891616,
+      "vaccine_endpoint_relative_change": 1.2969909036697378
+    }
+  },
+  "cross_correlation_lags": {
+    "intervention_m_vs_beta": {
+      "strongest": {
+        "lag_days": -13,
+        "correlation": 0.9917463651553214
+      },
+      "strongest_nonnegative_lag": {
+        "lag_days": 24,
+        "correlation": -0.9806482576580037
+      }
+    },
+    "intervention_c_vs_beta": {
+      "strongest": {
+        "lag_days": -14,
+        "correlation": 0.9954137506152526
+      },
+      "strongest_nonnegative_lag": {
+        "lag_days": 22,
+        "correlation": -0.9816479415104636
+      }
+    },
+    "vaccine_m_vs_nu": {
+      "strongest": {
+        "lag_days": -30,
+        "correlation": -0.9872917498684952
+      },
+      "strongest_nonnegative_lag": {
+        "lag_days": 30,
+        "correlation": 0.8154527745254665
+      }
+    },
+    "vaccine_c_vs_nu": {
+      "strongest": {
+        "lag_days": -30,
+        "correlation": -0.9949356811100025
+      },
+      "strongest_nonnegative_lag": {
+        "lag_days": 0,
+        "correlation": -0.8422154635242669
+      }
+    },
+    "intervention_m_vs_daily_cases": {
+      "strongest": {
+        "lag_days": 14,
+        "correlation": 0.9942779490958782
+      },
+      "strongest_nonnegative_lag": {
+        "lag_days": 14,
+        "correlation": 0.9942779490958782
+      }
+    },
+    "vaccine_m_vs_daily_vaccinations": {
+      "strongest": {
+        "lag_days": -27,
+        "correlation": -0.7082658062239731
+      },
+      "strongest_nonnegative_lag": {
+        "lag_days": 1,
+        "correlation": -0.42126896775200035
+      }
+    }
+  },
+  "counterfactual_warning": "M(t)=0 and C(t)=0 are outside the observed information-score range; their effects are model-based extrapolations and should not be interpreted as identified causal effects.",
+  "bootstrap_requested": 0,
+  "bootstrap_completed": 0
+}
